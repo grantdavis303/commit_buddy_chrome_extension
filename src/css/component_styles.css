@@ -1,0 +1,19 @@
+.messageCard {
+  background-color: black;
+  color: white;
+
+  margin: 10px 0px;
+  padding: 20px;
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.filePath {
+  color: yellow;
+}
+
+.messageContent {
+  color:aquamarine;
+}
