@@ -6,9 +6,10 @@ Git commits made easy.
 
 1. Navigate to Repo
 2. Run Build
-3. Click "Load Unpacked"
-4. Select `dist` Folder
-5. Pin Extension
+3. Navigate to `chrome://extensions/`
+4. Click "Load Unpacked"
+5. Select `dist` Folder of Repo
+6. Pin Extension
 
 ```
 open http://localhost:5173/
