@@ -13,7 +13,6 @@ function GeneratedMessageCard(commitMessage) {
     const commands = filePath + '\n' + messageContent;
 
     navigator.clipboard.writeText(commands);
-    localStorage.setItem('Copied Commands', commands)
 
     setCopyButtonText('Copied!');
 

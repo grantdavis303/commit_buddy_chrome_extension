@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import { TextField } from '@mui/material'
+import { TextField, Button } from '@mui/material'
 import GeneratedMessageCard from '../components/GeneratedMessageCard.jsx'
 import PushMainMessageCard from '../components/PushMainMessageCard.jsx'
 import { placeholderFiles, placeholderMessages } from '../scripts/placeholder_text.ts'
-import { storeRandomValue } from '../scripts/random_value.ts'
 import '../css/component_styles.css'
 
 // The big goal is to have data that's already typed into the inputs to save if
@@ -19,26 +18,29 @@ import '../css/component_styles.css'
 // Add functionality for Custom git push origin
 // Add Save button? Save to local storage
 
+// Clear local storage message updates "Exists" "Does Not Exist"
+
+// Generate & Store Random Number for Placeholders
+const placeholderCount = 10
+const randValue = Math.floor(Math.random() * placeholderCount)
+
 function MainPage() {
-  // const winOpen = !window.closed
-  // const winClosed = window.closed
-  // window.parent, window.top, window.opener
+  let winStatus
+
+  window.open ? winStatus = 'Open' : winStatus = 'Closed'
 
   const [data, setData] = useState({
     filePath: '',
     messageContent: ''
   })
 
-  // Generate & Store Random Number for Placeholders
-  const placeholderCount = 10;
-  const randValue = Math.floor(Math.random() * placeholderCount);
-  storeRandomValue(randValue)
-
   function changeFilePath(path) {
     setData({
       ...data,
       filePath: path.target.value,
     });
+
+    localStorage.setItem('Path', path.target.value)
   }
 
   function changeMessageContent(content) {
@@ -46,11 +48,46 @@ function MainPage() {
       ...data,
       messageContent: content.target.value,
     });
+
+    localStorage.setItem('Message', content.target.value)
+  }
+
+  // Check local storage for a specific key
+  function checkLocalStorage(key) {
+    if (localStorage.getItem(key) == null) {
+      return 'Does not exist'
+    } else {
+      return 'Exists'
+    }
+  }
+
+  // Load values from local storage
+  function loadFromLocalStorage() {
+    console.log('Path: ', checkLocalStorage('Path'))
+    console.log('Message: ', checkLocalStorage('Message'))
+
+    setData({
+      filePath: localStorage.getItem('Path'),
+      messageContent: localStorage.getItem('Message')
+    });
+  }
+
+  // Clear existing content in local storage
+  function clearLocalStorage() {
+    localStorage.clear()
   }
 
   return (
     <>
       <h1 className='title'> Commit Buddy </h1>
+
+      <p>{winStatus}</p>
+
+      <p>{checkLocalStorage('Path')}</p>
+      <p>{checkLocalStorage('Message')}</p>
+
+      <Button variant='outlined' onClick={loadFromLocalStorage}>Load from Local Storage</Button>
+      <Button variant='outlined' onClick={clearLocalStorage}>Clear Local Storage</Button>
 
       <p> A simple JavaScript tool that dynamically creates Git commit commands based on user input. </p>
 
@@ -65,7 +102,7 @@ function MainPage() {
       <div>
         <h2> Commit Message </h2>
 
-        <TextField fullWidth value={data.commitMessage} onChange={changeMessageContent} placeholder={placeholderMessages[randValue]} />
+        <TextField fullWidth value={data.messageContent} onChange={changeMessageContent} placeholder={placeholderMessages[randValue]} />
       </div>
 
       <h2> Generated Message </h2>
