@@ -17,3 +17,31 @@
 .messageContent {
   color:aquamarine;
 }
+
+.windowStatus {
+  /* background-color: rgb(16, 248, 78); */
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 10px;
+  width: fit-content;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.localStorageButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.localStorageButton {
+  margin: 10px;
+}
+
+.localStorageMessage {
+  font-weight: bold;
+}
+
+.inputText {
+  background-color: white;
+}

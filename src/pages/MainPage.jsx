@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { TextField, Button } from '@mui/material'
+import { Tab, Tabs, TextField, Button } from '@mui/material'
 import GeneratedMessageCard from '../components/GeneratedMessageCard.jsx'
 import PushMainMessageCard from '../components/PushMainMessageCard.jsx'
 import { placeholderFiles, placeholderMessages } from '../scripts/placeholder_text.ts'
@@ -52,20 +52,19 @@ function MainPage() {
     localStorage.setItem('Message', content.target.value)
   }
 
-  // Check local storage for a specific key
-  function checkLocalStorage(key) {
-    if (localStorage.getItem(key) == null) {
-      return 'Does not exist'
+  // Check local storage for existing files
+  function checkLocalStorage() {
+    const noSavedFiles = localStorage.getItem('Path') == null && localStorage.getItem('Message') == null
+
+    if (noSavedFiles) {
+      return 'No files saved in local storage.'
     } else {
-      return 'Exists'
+      return 'Files saved in local storage.'
     }
   }
 
   // Load values from local storage
   function loadFromLocalStorage() {
-    console.log('Path: ', checkLocalStorage('Path'))
-    console.log('Message: ', checkLocalStorage('Message'))
-
     setData({
       filePath: localStorage.getItem('Path'),
       messageContent: localStorage.getItem('Message')
@@ -75,34 +74,42 @@ function MainPage() {
   // Clear existing content in local storage
   function clearLocalStorage() {
     localStorage.clear()
+
+    setData({
+      filePath: '',
+      messageContent: ''
+    });
   }
 
   return (
     <>
       <h1 className='title'> Commit Buddy </h1>
 
-      <p>{winStatus}</p>
-
-      <p>{checkLocalStorage('Path')}</p>
-      <p>{checkLocalStorage('Message')}</p>
-
-      <Button variant='outlined' onClick={loadFromLocalStorage}>Load from Local Storage</Button>
-      <Button variant='outlined' onClick={clearLocalStorage}>Clear Local Storage</Button>
-
       <p> A simple JavaScript tool that dynamically creates Git commit commands based on user input. </p>
+
+      <div className='windowStatus'>
+        <span>{winStatus}</span>
+      </div>
+
+      <p className='localStorageMessage'>{checkLocalStorage()}</p>
+
+      <div className='localStorageButtons'>
+        <Button className='localStorageButton' variant='outlined' onClick={loadFromLocalStorage}>Load from Local Storage</Button>
+        <Button className='localStorageButton' variant='outlined' onClick={clearLocalStorage}>Clear Local Storage</Button>
+      </div>
 
       <div>
         <h2> Files and File Paths </h2>
 
         <p> You can manually type in the file or file path, or copy and paste the relative path from your IDE. Add multiple files or file paths with spaces. </p>
 
-        <TextField fullWidth value={data.filePath} onChange={changeFilePath} placeholder={placeholderFiles[randValue]} />
+        <TextField className='inputText' fullWidth value={data.filePath} onChange={changeFilePath} placeholder={placeholderFiles[randValue]} />
       </div>
 
       <div>
         <h2> Commit Message </h2>
 
-        <TextField fullWidth value={data.messageContent} onChange={changeMessageContent} placeholder={placeholderMessages[randValue]} />
+        <TextField className='inputText' fullWidth value={data.messageContent} onChange={changeMessageContent} placeholder={placeholderMessages[randValue]} />
       </div>
 
       <h2> Generated Message </h2>

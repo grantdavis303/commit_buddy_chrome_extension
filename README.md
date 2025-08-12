@@ -5,11 +5,30 @@ Git commits made easy.
 ## Local Setup
 
 1. Navigate to Repo
-2. Run Build
-3. Navigate to `chrome://extensions/`
-4. Click "Load Unpacked"
-5. Select `dist` Folder of Repo
-6. Pin Extension
+
+```
+cd commit_buddy_chrome_extension
+```
+
+2. Install Dependencies
+
+```
+npm install
+```
+
+3. Run Build
+
+```
+npm run build
+```
+
+4. Navigate to `chrome://extensions/`
+
+5. Click "Load Unpacked"
+
+6. Select `dist` Folder of Repo
+
+7. Pin Extension
 
 ```
 open http://localhost:5173/
