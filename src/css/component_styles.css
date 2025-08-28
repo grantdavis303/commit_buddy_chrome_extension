@@ -38,10 +38,19 @@
   margin: 10px;
 }
 
-.localStorageMessage {
+.localStorageMessage, .versionText {
   font-weight: bold;
 }
 
 .inputText {
   background-color: white;
+}
+
+.versionNumber {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.versionText {
+  color: #ababab;
 }

@@ -2,23 +2,16 @@ import { useState } from 'react'
 import { Tab, Tabs, TextField, Button } from '@mui/material'
 import GeneratedMessageCard from '../components/GeneratedMessageCard.jsx'
 import PushMainMessageCard from '../components/PushMainMessageCard.jsx'
+import VersionNumber from '../components/VersionNumber.jsx'
 import { placeholderFiles, placeholderMessages } from '../scripts/placeholder_text.ts'
 import '../css/component_styles.css'
 
-// The big goal is to have data that's already typed into the inputs to save if
-// the user accidentally clicks out of it
-// Do we automatically load text from localStorage if the user clicks out of it?
+// The big goal is to have data that's already typed into the inputs to save if the user accidentally clicks out of it
 
 // NOT DONE:
 
-// Save commit data on close
-// Save commit data automatically, at a set interval?
+// Add functionality for Custom git push origin x...
 // Maybe list a few recent commits, depending on how they're saved
-// Add Load button? Load from local storage
-// Add functionality for Custom git push origin
-// Add Save button? Save to local storage
-
-// Clear local storage message updates "Exists" "Does Not Exist"
 
 // Generate & Store Random Number for Placeholders
 const placeholderCount = 10
@@ -116,6 +109,8 @@ function MainPage() {
 
       <GeneratedMessageCard content={data} />
       <PushMainMessageCard />
+
+      <VersionNumber />
     </>
   )
 }
