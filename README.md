@@ -1,6 +1,6 @@
 # Commit Buddy Chrome Extension
 
-Git commits made easy.
+A simple JavaScript tool that dynamically creates Git commit commands based on user input.
 
 ## Local Setup
 
@@ -22,17 +22,15 @@ npm install
 npm run build
 ```
 
-4. Navigate to `chrome://extensions/`
+4. Type `chrome://extensions/` into Chrome Browser
 
-5. Click "Load Unpacked"
+5. Enable Developer Mode
 
-6. Select `dist` Folder of Repo
+6. Click "Load Unpacked"
+
+6. Select `dist` Folder in Commit Buddy Chrome Extension Repo
 
 7. Pin Extension
 
-```
-open http://localhost:5173/
-
-npm install
-npm run dev
-```
+- Click Puzzle Piece Icon
+- Click Pin Icon
