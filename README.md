@@ -1,5 +1,7 @@
 # Commit Buddy Chrome Extension
 
+[See Commit Buddy in the Chrome Web Store](https://chromewebstore.google.com/detail/commit-buddy/jfidkngbdohmegijjkggecihaokmcgof?authuser=0&hl=en)
+
 A simple JavaScript tool that dynamically creates Git commit commands based on user input.
 
 ## Local Setup
