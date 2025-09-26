@@ -2,7 +2,7 @@
 
 [See Commit Buddy in the Chrome Web Store](https://chromewebstore.google.com/detail/commit-buddy/jfidkngbdohmegijjkggecihaokmcgof?authuser=0&hl=en)
 
-A simple JavaScript tool that dynamically creates Git commit commands based on user input.
+Write and save Git commit commands from the browser.
 
 ## Local Setup
 
@@ -30,7 +30,7 @@ npm run build
 
 6. Click "Load Unpacked"
 
-6. Select `dist` Folder in Commit Buddy Chrome Extension Repo
+6. Select `dist` Child Folder in Commit Buddy Chrome Extension Parent Folder
 
 7. Pin Extension
 
