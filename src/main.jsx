@@ -1,8 +1,7 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import App from './App.jsx'
-import './index.css'
+import './App.css'
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';

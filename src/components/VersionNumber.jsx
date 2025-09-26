@@ -1,9 +1,11 @@
-import '../css/component_styles.css'
+import '../App.css'
 
 function VersionNumber() {
   return (
     <div className='versionNumber'>
-      <p className='versionText'> Version 1.0.0 </p>
+      <p>
+        <a className='versionText' href="https://github.com/grantdavis303/commit_buddy_chrome_extension/blob/main/CHANGELOG.md" target="_blank">Version 1.1.0</a>
+      </p>
     </div>
   )
 }
