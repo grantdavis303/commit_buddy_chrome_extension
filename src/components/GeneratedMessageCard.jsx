@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Button, Snackbar } from '@mui/material'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
-import '../css/component_styles.css'
+import '../App.css'
 
 function GeneratedMessageCard(commitMessage) {
   const [copyButtonText, setCopyButtonText] = useState('Copy');
@@ -39,12 +39,17 @@ function GeneratedMessageCard(commitMessage) {
 
   return (
     <div className='messageCard'>
-      <p> git add <span className='filePath'>{commitMessage.content.filePath}</span> </p>
-      <p> git commit -m <span className='messageContent'>"{commitMessage.content.messageContent}"</span> </p>
 
-      <ThemeProvider theme={theme}>
-        <Button variant='outlined' color='white' onClick={copyToClipboard}>{copyButtonText}</Button>
-      </ThemeProvider>
+      <div className='codeContent'>
+        <p> git add <span className='filePath'>{commitMessage.content.filePath}</span> </p>
+        <p> git commit -m <span className='messageContent'>"{commitMessage.content.messageContent}"</span> </p>
+      </div>
+
+      <div className='copyButton'>
+        <ThemeProvider theme={theme}>
+          <Button variant='outlined' color='white' onClick={copyToClipboard}>{copyButtonText}</Button>
+        </ThemeProvider>
+      </div>
 
       <Snackbar
         open={open}

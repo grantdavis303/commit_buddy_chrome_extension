@@ -1,19 +1,17 @@
-import { useState } from 'react'
-import { Tab, Tabs, TextField, Button } from '@mui/material'
+import { useState, useEffect } from 'react'
+import { TextField } from '@mui/material'
+import { TrashIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
 import GeneratedMessageCard from '../components/GeneratedMessageCard.jsx'
-import PushMainMessageCard from '../components/PushMainMessageCard.jsx'
 import VersionNumber from '../components/VersionNumber.jsx'
 import { placeholderFiles, placeholderMessages } from '../scripts/placeholder_text.ts'
-import '../css/component_styles.css'
+import '../App.css'
 
-// The big goal is to have data that's already typed into the inputs to save if the user accidentally clicks out of it
 
-// NOT DONE:
+// The big goal is to have data that's typed into the text inputs to save
+// if the user accidentally (or not accidentally) clicks out of the window,
+// as well as the data to automatically load upon reopen.
 
-// Add functionality for Custom git push origin x...
-// Maybe list a few recent commits, depending on how they're saved
-
-// Generate & Store Random Number for Placeholders
+// Generate and store random number for placeholders
 const placeholderCount = 10
 const randValue = Math.floor(Math.random() * placeholderCount)
 
@@ -56,6 +54,15 @@ function MainPage() {
     }
   }
 
+  // Automatically load values from local storage
+  useEffect(() => {
+    const filesSavedInLocalStorage = checkLocalStorage() == 'Files saved in local storage.'
+
+    if (filesSavedInLocalStorage) {
+      return loadFromLocalStorage()
+    }
+  }, []);
+
   // Load values from local storage
   function loadFromLocalStorage() {
     setData({
@@ -75,32 +82,31 @@ function MainPage() {
   }
 
   return (
-    <>
+    <div className='mainPage'>
       <h1 className='title'> Commit Buddy </h1>
 
-      <p> A simple JavaScript tool that dynamically creates Git commit commands based on user input. </p>
-
-      <div className='windowStatus'>
-        <span>{winStatus}</span>
-      </div>
+      {console.log('Commit Buddy: ', winStatus)}
 
       <p className='localStorageMessage'>{checkLocalStorage()}</p>
 
-      <div className='localStorageButtons'>
-        <Button className='localStorageButton' variant='outlined' onClick={loadFromLocalStorage}>Load from Local Storage</Button>
-        <Button className='localStorageButton' variant='outlined' onClick={clearLocalStorage}>Clear Local Storage</Button>
+      <div>
+        <TrashIcon className='localStorageIcon' onClick={clearLocalStorage} />
       </div>
 
       <div>
-        <h2> Files and File Paths </h2>
-
-        <p> You can manually type in the file or file path, or copy and paste the relative path from your IDE. Add multiple files or file paths with spaces. </p>
+        <div className='iconBlockWrapper'>
+          <h2> Files and File Paths </h2>
+          <QuestionMarkCircleIcon className='questionMarkIcon' title='You can manually type in the file or file path, or copy and paste the relative path from your IDE. Add multiple files or file paths with spaces.' />
+        </div>
 
         <TextField className='inputText' fullWidth value={data.filePath} onChange={changeFilePath} placeholder={placeholderFiles[randValue]} />
       </div>
 
       <div>
-        <h2> Commit Message </h2>
+        <div className='iconBlockWrapper'>
+          <h2> Commit Message </h2>
+          <QuestionMarkCircleIcon className='questionMarkIcon' title='Write a short, descriptive message summarizing your changes.' />
+        </div>
 
         <TextField className='inputText' fullWidth value={data.messageContent} onChange={changeMessageContent} placeholder={placeholderMessages[randValue]} />
       </div>
@@ -108,10 +114,9 @@ function MainPage() {
       <h2> Generated Message </h2>
 
       <GeneratedMessageCard content={data} />
-      <PushMainMessageCard />
 
       <VersionNumber />
-    </>
+    </div>
   )
 }
 
