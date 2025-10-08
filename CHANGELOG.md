@@ -1,5 +1,10 @@
 # Commit Buddy Chrome Extension Changelog
 
+## Version 1.1.1
+
+- Update the `manifest.json` file with a clearer description of Commit Buddy.
+- Remove outdated Chrome Web Store images.
+
 ## Version 1.1.0
 
 - Automatically load local storage files if they exist.
