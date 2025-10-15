@@ -88,13 +88,19 @@ button:focus, button:focus-visible {
   display: inline-flex;
 }
 
-.localStorageIcon {
+.trashIcon {
   position: absolute;
   top: 20px;
   right: 20px;
   width: 28px;
   stroke: #213547;
   /* fill: #ffffff */
+}
+
+.trashIcon:hover {
+  cursor: pointer;
+  stroke: #f71d1d;
+  transition: 0.5s;
 }
 
 .questionMarkIcon {
@@ -104,7 +110,7 @@ button:focus, button:focus-visible {
   margin-left: 4px;
 }
 
-.localStorageIcon:hover, .questionMarkIcon:hover {
+.questionMarkIcon:hover {
   cursor: pointer;
   stroke: #909aa3;
   transition: 0.5s;
