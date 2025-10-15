@@ -1,6 +1,6 @@
 {
   "name": "Commit Buddy",
-  "description": "Write and save Git commit commands directly from the browser, reducing terminal clutter, minimizing potential mistakes, and boosting productivity. Open source.",
+  "description": "Write and save Git commits from the browser to reduce terminal clutter, avoid mistakes, and boost productivity. Open source.",
   "version": "1.1.2",
   "manifest_version": 3,
   "action": {
