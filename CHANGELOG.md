@@ -6,7 +6,7 @@
 - Create separator for the trash icon and change the hover color to red.
 - Add detail to placeholder messages.
 - Add detail to description and update version number.
-- Update CHANGELOG with `1.1.2` changes
+- Update CHANGELOG with `1.1.2` changes.
 
 ## Version 1.1.1
 
