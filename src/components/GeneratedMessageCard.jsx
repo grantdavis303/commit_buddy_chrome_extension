@@ -53,7 +53,7 @@ function GeneratedMessageCard(commitMessage) {
 
       <Snackbar
         open={open}
-        message='Copied to the clipboard.'
+        message='Copied to the clipboard!'
         autoHideDuration={2000}
         onClose={handleClose}
       />
