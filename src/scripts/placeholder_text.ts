@@ -4,7 +4,7 @@ export const placeholderFiles = [
   '.github/workflows/main.yml',
   'src/pages/MainPage.tsx',
   'README.md',
-  'spec/features spec/models',
+  'spec/models',
   'db',
   '.gitignore',
   'app',
@@ -12,14 +12,14 @@ export const placeholderFiles = [
 ]
 
 export const placeholderMessages = [
-  'Init Commit',
-  'Update Image Sizes',
-  'Add GitHub Actions YAML File',
-  'Remove Comments',
-  'Update README',
-  'Update RSpec Tests',
-  'Create Seeds & Schema',
-  'Add .gitignore',
-  'Fix Faraday API Request',
-  'Add LeetCode Medium #10 '
+  'Init commit',
+  'Adjust hero and thumbnail image sizes for responsive layout',
+  'Add GitHub actions YAML for continuous deployment to staging',
+  'Clean up outdated inline comments',
+  'Add local development setup steps to README',
+  'Refactor RSpec tests for User and Order models using mocks and stubs',
+  'Add initial database schema and seed data for users and orders',
+  'Add .gitignore with Node, Rails, and editor-specific ignores',
+  'Fix Faraday API request to handle timeouts and invalid responses',
+  'Add solution for LeetCode #10 (Regular Expression Matching) with tests'
 ]
