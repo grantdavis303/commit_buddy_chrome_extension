@@ -1,8 +1,8 @@
 # Commit Buddy Chrome Extension
 
-[See Commit Buddy in the Chrome Web Store](https://chromewebstore.google.com/detail/commit-buddy/jfidkngbdohmegijjkggecihaokmcgof?authuser=0&hl=en)
+### [See Commit Buddy in the Chrome Web Store](https://chromewebstore.google.com/detail/commit-buddy/jfidkngbdohmegijjkggecihaokmcgof?authuser=0&hl=en)
 
-Write and save Git commit commands from the browser.
+A developer productivity tool designed to reduce friction in Git workflows by saving commit messages in the browser.
 
 ## Local Setup
 
