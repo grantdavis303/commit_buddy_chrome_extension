@@ -1,0 +1,18 @@
+div.versionNumberContainer {
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+}
+
+div.versionNumberContainer > p {
+  margin: 0;
+  padding: 0;
+  color: var(--primary);
+}
+
+a.mini {
+  font-weight: bold;
+}

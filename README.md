@@ -2,13 +2,14 @@
 
 ### [See Commit Buddy in the Chrome Web Store](https://chromewebstore.google.com/detail/commit-buddy/jfidkngbdohmegijjkggecihaokmcgof?authuser=0&hl=en)
 
-A developer productivity tool designed to reduce friction in Git workflows by saving commit messages in the browser.
+A Chrome extension that simplifies Git workflows by letting developers write and save commit messages in the browser.
 
 ## Local Setup
 
-1. Navigate to Repo
+1. Clone & Navigate to Repo
 
 ```
+git@github.com:grantdavis303/commit_buddy_chrome_extension.git
 cd commit_buddy_chrome_extension
 ```
 
@@ -24,15 +25,19 @@ npm install
 npm run build
 ```
 
-4. Type `chrome://extensions/` into Chrome Browser
+4. Navigate to `chrome://extensions/` in the Chrome Browser
 
-5. Enable Developer Mode
+5. In the top-right corner, enable "Developer Mode"
 
 6. Click "Load Unpacked"
 
-6. Select `dist` Child Folder in Commit Buddy Chrome Extension Parent Folder
+7. Select the `dist` folder inside `commit_buddy_chrome_extension`
 
-7. Pin Extension
+    - You should see the extension popup in the "All Extensions" section with a description and icon.
 
-- Click Puzzle Piece Icon
-- Click Pin Icon
+8. Pin the Extension (optional)
+
+    - Click the puzzle piece icon in the browser to the right of the search bar.
+    - Find "Commit Buddy" in the list.
+    - Click the pin icon to pin it.
+    - Click on the Commit Buddy logo to open Commit Buddy.
